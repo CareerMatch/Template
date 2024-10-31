@@ -7,8 +7,8 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["ServiceTemplate/ServiceTemplate.csproj", "ServiceTemplate/"]
-RUN dotnet restore "ServiceTemplate/ServiceTemplate.csproj"
+COPY ServiceTemplate.csproj.csproj ./
+RUN dotnet restore "ServiceTemplate.csproj"
 COPY . .
 WORKDIR "/src/ServiceTemplate"
 RUN dotnet build "ServiceTemplate.csproj" -c $BUILD_CONFIGURATION -o /app/build
