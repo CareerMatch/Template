@@ -10,7 +10,7 @@ WORKDIR /src
 COPY ServiceTemplate.csproj.csproj ./
 RUN dotnet restore "ServiceTemplate.csproj"
 COPY . .
-WORKDIR "/src/ServiceTemplate"
+WORKDIR "/src"
 RUN dotnet build "ServiceTemplate.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
