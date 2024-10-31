@@ -19,7 +19,7 @@ jobs:
 
       - name: Set Environment Variables for Service
         env:
-          SERVICE_FOLDER: "Template"
+          SERVICE_FOLDER: "ServiceTemplate"
           IMAGE_TAG: "servicetemplate:v1"
         run: |
           echo "SERVICE_FOLDER=${SERVICE_FOLDER}" >> $GITHUB_ENV
